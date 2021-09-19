@@ -1,9 +1,9 @@
-const Data = [
+const Album = [
     {
         id: "1",
         image: require('../assets/Shershaah.jpg'),
         title: "Shershaah",
-        artist: "Tanishk Bagchi, B Praak"
+        artist: "Tanishk Bagchi, B Praak, Jasleen Royal"
     },
     {
         id: "2",
@@ -14,9 +14,9 @@ const Data = [
     {
         id: "3",
         image: require('../assets/Malang.jpg'),
-        title: "Shershaah",
+        title: "Malang",
         artist: "Mithoon, Ankit Tiwari"
-    }
+    },
 ]
 
-export default Data;
+export default Album;
