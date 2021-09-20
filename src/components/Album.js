@@ -1,18 +1,24 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
 const Album = props => {
+  
+  const onPress = () => {
+    console.log("Album Pressed!")
+  }
   return (
     <View style={styles.container}>
+      <TouchableOpacity activeOpacity={0.6} onPress={onPress}> 
       <Image style={styles.imageStyle} source={props.albumImage} />
-      <Text style={styles.titleFont}>{props.title}</Text>
+      <Text numberOfLines={1} style={styles.titleFont}>{props.title}</Text>
       <Text numberOfLines={1} style={styles.artistFont}>
         {props.artist}
       </Text>
+      </TouchableOpacity>
     </View>
   );
 };
