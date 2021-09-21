@@ -10,7 +10,7 @@ import Album from './Album';
 const AlbumCategory = props => {
   return (
     <View style={styles.container}>
-      <Text style={styles.albumTitle}>{props.category}</Text>
+      <Text allowFontScaling={false} style={styles.albumTitle}>{props.category}</Text>
       <FlatList
         data={props.albums}
         renderItem={({item}) => (

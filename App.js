@@ -6,7 +6,7 @@ import BottomTab from './src/components/BottomTab';
 const App = () => {
   return (
     <NavigationContainer theme={DarkTheme}>     
-      {/* <StatusBar translucent={true} backgroundColor="transparent"/> */}
+      <StatusBar translucent={true} backgroundColor="transparent"/>
       <BottomTab/>
     </NavigationContainer>
   )

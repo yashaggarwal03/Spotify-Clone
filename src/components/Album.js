@@ -14,8 +14,8 @@ const Album = props => {
     <View style={styles.container}>
       <TouchableOpacity activeOpacity={0.6} onPress={onPress}> 
       <Image style={styles.imageStyle} source={props.albumImage} />
-      <Text numberOfLines={1} style={styles.titleFont}>{props.title}</Text>
-      <Text numberOfLines={1} style={styles.artistFont}>
+      <Text allowFontScaling={false} numberOfLines={1} style={styles.titleFont}>{props.title}</Text>
+      <Text allowFontScaling={false} numberOfLines={1} style={styles.artistFont}>
         {props.artist}
       </Text>
       </TouchableOpacity>
