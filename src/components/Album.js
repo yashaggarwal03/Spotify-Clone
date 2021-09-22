@@ -1,18 +1,18 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-const Album = props => {
-  
-  const onPress = () => {
-    console.log("Album Pressed!")
-  }
+
+export default function Album (props) {
+
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity activeOpacity={0.6} onPress={onPress}> 
+       <TouchableOpacity onPress={() => props.navigation.navigate("Album")}>
       <Image style={styles.imageStyle} source={props.albumImage} />
       <Text allowFontScaling={false} numberOfLines={1} style={styles.titleFont}>{props.title}</Text>
       <Text allowFontScaling={false} numberOfLines={1} style={styles.artistFont}>
@@ -47,5 +47,3 @@ const styles = StyleSheet.create({
     fontSize: hp(2),
   },
 });
-
-export default Album;

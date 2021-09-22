@@ -1,5 +1,6 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
 import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 //Importing vector-icons
@@ -10,23 +11,50 @@ import Entypo from 'react-native-vector-icons/Entypo';
 
 //Importing HomeScreen
 import HomeScreen from '../screens/HomeScreen';
+import AlbumScreen from '../screens/AlbumScreen';
 
+//Declaring HomeStack and Tab
+const HomeStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+
+//Declaring HomeStackScreen for Navigation to AlbumScreen
+const HomeStackScreen = () => {
+  return (
+    <HomeStack.Navigator initialRouteName="HomeScreen">
+      <HomeStack.Screen
+        name="Home Screen"
+        component={HomeScreen}
+        options={{
+          headerShown: true,
+        }}
+      />
+      <HomeStack.Screen
+        name="Album"
+        component={AlbumScreen}
+        options={{
+          title: 'Album',
+          headerShown: true,
+        }}
+      />
+    </HomeStack.Navigator>
+  );
+};
 
 const BottomTab = () => {
   return (
     <Tab.Navigator screenOptions={{tabBarStyle: {height: hp(8.5)}}}>
       <Tab.Screen
         name="Home"
-        component={HomeScreen}
+        component={HomeStackScreen}
         options={{
+          headerShown: false,
           tabBarLabelStyle: {bottom: hp(0.75), fontSize: hp(1.4)},
           tabBarIcon: ({focused}) => (
             <Foundation
               name="home"
               size={30}
               color={focused ? '#fff' : '#808080'}
-            />            
+            />
           ),
           tabBarActiveTintColor: '#fff',
         }}
@@ -35,7 +63,7 @@ const BottomTab = () => {
         name="Search"
         component={HomeScreen}
         options={{
-            tabBarLabelStyle: {bottom: hp(0.75), fontSize: hp(1.4)},
+          tabBarLabelStyle: {bottom: hp(0.75), fontSize: hp(1.4)},
           tabBarIcon: ({focused}) => (
             <Ionicons
               name="search-outline"
@@ -50,7 +78,7 @@ const BottomTab = () => {
         name="Your Library"
         component={HomeScreen}
         options={{
-            tabBarLabelStyle: {bottom: hp(0.75), fontSize: hp(1.4)},
+          tabBarLabelStyle: {bottom: hp(0.75), fontSize: hp(1.4)},
           tabBarIcon: ({focused}) => (
             <MaterialIcons
               name="library-music"
@@ -65,7 +93,7 @@ const BottomTab = () => {
         name="Premium"
         component={HomeScreen}
         options={{
-            tabBarLabelStyle: {bottom: hp(0.75), fontSize: hp(1.4)},
+          tabBarLabelStyle: {bottom: hp(0.75), fontSize: hp(1.4)},
           tabBarIcon: ({focused}) => (
             <Entypo
               name="spotify"

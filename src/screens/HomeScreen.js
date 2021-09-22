@@ -1,16 +1,17 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image, FlatList} from 'react-native';
+import {StyleSheet, Text, View, Image, FlatList, TouchableOpacity} from 'react-native';
 
 import AlbumCategory from '../components/AlbumCategory';
 import Data from '../models/Data';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <FlatList
         data={Data}
         renderItem={({item}) => (
           <AlbumCategory
+            navigation={navigation}
             category={item.category}
             albums={item.albums}
           />

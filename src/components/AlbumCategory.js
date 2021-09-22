@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -15,6 +15,7 @@ const AlbumCategory = props => {
         data={props.albums}
         renderItem={({item}) => (
           <Album
+            navigation={props.navigation}
             albumImage={item.image}
             title={item.title}
             artist={item.artist}
