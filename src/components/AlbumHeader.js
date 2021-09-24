@@ -42,12 +42,6 @@ const AlbumHeader = props => {
         size={hp(9)}
         color="#1fc75a"
       />
-      <Entypo 
-        style={styles.shuffle}
-        name='shuffle'
-        size={hp(2)}
-        color='#1fc75a'
-      />
     </View>
   );
 };
@@ -85,14 +79,6 @@ const styles = StyleSheet.create({
     right: wp(2),
     top: hp(39),
   },
-  shuffle: {
-    position: 'absolute',
-    right: wp(2),
-    top: hp(46),
-    backgroundColor: '#333',
-    // borderWidth: hp(1),
-    borderRadius: hp(2)
-  }
 });
 
 export default AlbumHeader;
