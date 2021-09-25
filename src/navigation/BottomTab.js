@@ -1,6 +1,6 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 //Importing vector-icons
@@ -14,7 +14,7 @@ import HomeScreen from '../screens/HomeScreen';
 import AlbumScreen from '../screens/AlbumScreen';
 
 //Declaring HomeStack and Tab
-const HomeStack = createStackNavigator();
+const HomeStack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 //Declaring HomeStackScreen for Navigation to AlbumScreen
@@ -25,15 +25,22 @@ const HomeStackScreen = () => {
         name="Home Screen"
         component={HomeScreen}
         options={{
-          headerShown: true,
+          headerStyle: {
+            background: '#111'
+          },
+          headerShadowVisible: false        
+
         }}
       />
       <HomeStack.Screen
         name="Album"
         component={AlbumScreen}
         options={{
-          title: 'Album',
-          headerShown: true,
+          title: '',
+          headerStyle: {
+            background: '#111'
+          },
+          headerShadowVisible: false
         }}
       />
     </HomeStack.Navigator>

@@ -9,10 +9,9 @@ import {
 
 export default function Album (props) {
 
-
   return (
     <View style={styles.container}>
-       <TouchableOpacity onPress={() => props.navigation.navigate("Album")}>
+       <TouchableOpacity onPress={() => props.navigation.navigate("Album", {title: props.title})}>
       <Image style={styles.imageStyle} source={props.albumImage} />
       <Text allowFontScaling={false} numberOfLines={1} style={styles.titleFont}>{props.title}</Text>
       <Text allowFontScaling={false} numberOfLines={1} style={styles.artistFont}>
@@ -43,7 +42,7 @@ const styles = StyleSheet.create({
     marginTop: hp(1.5),
   },
   artistFont: {
-    color: '#8c8c8c',
+    color: '#a6a6a6',
     fontSize: hp(2),
   },
 });
